@@ -10,7 +10,7 @@ api_version = "v3"
 DEVELOPER_KEY = 'insert API key'
 # API client
 youtube = googleapiclient.discovery.build(
-        api_service_name, api_version, developerKey = DEVELOPER_KEY)
+        api_service_name, api_version, developerKey=DEVELOPER_KEY)
 # Request body
 request = youtube.search().list(
         part="id,snippet",
@@ -29,5 +29,6 @@ dataframe = pd.DataFrame.from_dict(response2)
 engine = db.create_engine('sqlite:///data_base_name.db')
 dataframe.to_sql('table_name', con=engine, if_exists='replace', index=False)
 with engine.connect() as connection:
-   query_result = connection.execute(db.text("SELECT * FROM table_name;")).fetchall()
-   print(pd.DataFrame(query_result))
+    query_result = connection.execute(
+        db.text("SELECT * FROM table_name;")).fetchall()
+    print(pd.DataFrame(query_result))
