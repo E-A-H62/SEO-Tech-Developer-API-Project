@@ -4,10 +4,11 @@ import pandas as pd
 import googleapiclient.discovery
 import pprint
 
+
 # API information
 api_service_name = "youtube"
 api_version = "v3"
-DEVELOPER_KEY = 'AIzaSyDuUFKGfNPkEOJaD3hqIdSvpe7GzMnkfuk'
+DEVELOPER_KEY = 'API_KEY'
 
 # API client
 youtube = googleapiclient.discovery.build(
